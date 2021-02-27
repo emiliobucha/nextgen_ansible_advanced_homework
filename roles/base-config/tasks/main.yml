@@ -8,7 +8,6 @@
     replace: 'Defaults  !requiretty'
     backup: yes
 
----
 - name: enable repos
   template:
     src: repos_template.j2
