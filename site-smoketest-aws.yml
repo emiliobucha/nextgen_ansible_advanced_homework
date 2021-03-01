@@ -1,4 +1,4 @@
-- name: Smoke Test - Pro Environment
+- name: Smoke Test - Prod Environment
   hosts: frontends
   gather_facts: false
   tasks:
@@ -11,7 +11,8 @@
     register: webpage
     tags:
       - osp.smoke
-        
+  - debug: 
+    msg: "{{ webpage.content }}"
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
     when: "'Ansible has done its job' not in webpage.content"
